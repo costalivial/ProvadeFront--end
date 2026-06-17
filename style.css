@@ -1,0 +1,115 @@
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'inter', sans-serif;
+    background: #cad9ef;
+    color:  #004b87;
+    
+    /* Removemos o padding vertical daqui para o rodapé poder encostar no fundo */
+    padding: 0 20px; 
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* Mudamos para stretch para os elementos (como o rodapé) poderem esticar até as bordas */
+    align-items: stretch; 
+    
+    min-height: 100%; /* Mudado de height para min-height (evita bugs se o conteúdo crescer demais) */
+}
+
+/* ================= CABEÇALHO (NOVO) ================= */
+.topo {
+    width: 100%;
+    background:  #004b87;
+    color: rgb(150, 196, 211);
+    text-align: center;
+    
+    /* Força o rodapé a ignorar o padding lateral do body e colar nas bordas da tela */
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+}
+
+.topo h2 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+
+/* Subtítulo */
+.subtitulo {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Menu simples para navegar entre os arquivos locais */
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+ 
+.nav-menu a:hover {
+    color:#609e7c;
+    transform: scale(1.1);
+}
+
+
+.nav-menu a.active {
+    background-color: #01511dfb;
+    color: white;
+}
+
+
+.container {
+    background-color: white;
+    padding: 40px;       /* Um pouco menos de padding para dar mais espaço interno */
+    border-radius: 20px;
+    box-shadow: 0 4px 12px  #03035b(25, 3, 169, 0.2); /* Suavizei um pouco a sombra */
+    width: 100%;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px; /* Espaço antes do rodapé final */
+    
+    flex: 1; /* Faz o container empurrar o rodapé para o fim da tela */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ================= RODAPÉ ================= */
+.rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #004b87;
+    color: rgb(150, 196, 211);
+    
+    /* Força o rodapé a ignorar o padding lateral do body e colar nas bordas da tela */
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+}
+
