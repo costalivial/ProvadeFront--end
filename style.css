@@ -93,6 +93,21 @@ body {
     flex: 1; 
 }
 
+.card {
+    background-color: rgb(163, 214, 242);
+    padding: 20px;
+
+    width: 200px;
+
+    border-radius: 20px;
+    /* Bordas arredondadas */
+
+    box-shadow: 0px 4px 5px rgb(28, 11, 215);
+    /* Sombra leve */
+
+    text-align: center;
+}
+
 /* ================= FORMULÁRIOS ================= */
 .form-group {
     margin-bottom: 18px;
@@ -220,29 +235,6 @@ hr {
     font-weight: 800;
 }
 
-.avisos-home {
-    text-align: left;
-    background-color: #cdd3ff;
-    padding: 15px;
-    border-radius: 6px;
-    border-left: 4px solid #8bbae6;
-    margin: 25px 0;
-}
-
-.avisos-home h3 {
-    margin-top: 0;
-    color: #041185;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.avisos-home ul {
-    padding-left: 20px;
-    font-size: 14px;
-    color: #032466;
-    line-height: 1.5;
-}
-
 /* Área de botões na Home */
 .botoes-acoes {
     display: flex;
@@ -251,16 +243,6 @@ hr {
     margin-top: 25px;
 }
 
-.btn-home {
-    display: block;
-    padding: 14px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: background 0.2s, transform 0.1s;
-    text-align: center;
-}
 
 .btn-entrar {
     background-color: #0147b0;
