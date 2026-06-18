@@ -1,4 +1,4 @@
-// --- LÓGICA DA TELA DE LOGIN (index.html) ---
+// --- LÓGICA DA TELA DE LOGIN  ---
 const formIndex = document.getElementById('form-index');
 
 // Verificamos se o formulário de login existe na página atual antes de aplicar o evento
