@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar novo usuario</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header class="topo">
@@ -14,33 +13,33 @@
     </header>
 
     <div class="container" style="max-width: 450px;">
-
-    <form id="form-cadastro">
-            
-        <div class="form-group">
-            <label for="cad-nome">Nome Completo:</label>
-            <input type="text" id="cad-nome" placeholder="Digite seu nome" required>
-        </div>
-
-        <div class="form-group">
-            <label for="cadastro-email">E-mail:</label>
-            <input type="email" id="cadastro-email" placeholder="exemplo@email.com" required>
-        </div>
-    
-        <div class="form-row">
+        <form id="form-cadastro">
+                
             <div class="form-group">
-                <label for="cad-telefone">Telefone:</label>
-                <input type="tel" id="cad-telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+                <label for="cad-nome">Nome Completo:</label>
+                <input type="text" id="cad-nome" placeholder="Digite seu nome" required>
             </div>
 
             <div class="form-group">
-                <label for="cad-nome">Nome da Mãe:</label>
-                <input type="text" id="cad-nome" placeholder="Digite o nome da sua mãe" required>
+                <label for="cadastro-email">E-mail:</label>
+                <input type="email" id="cadastro-email" placeholder="exemplo@email.com" required>
             </div>
+        
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cad-telefone">Telefone:</label>
+                    <input type="tel" id="cad-telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+                </div>
 
-            <div class="form-group">
-                <label for="cad-nome">Nome do pai:</label>
-                <input type="text" id="cad-nome" placeholder="Digite o nome do seu pai" required>
+                <div class="form-group">
+                    <label for="cad-mae">Nome da Mãe:</label>
+                    <input type="text" id="cad-mae" placeholder="Digite o nome da sua mãe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cad-pai">Nome do pai:</label>
+                    <input type="text" id="cad-pai" placeholder="Digite o nome do seu pai" required>
+                </div>
             </div>
 
             <hr>
@@ -56,7 +55,6 @@
                 </div>
             </div>
 
-            
             <div class="form-row">
                 <div class="form-group" style="flex: 2;">
                     <label for="end-cidade">Cidade</label>
@@ -78,8 +76,8 @@
                     </select>
                 </div>
                 <div class="form-group" style="flex: 1;">
-                    <label for="end-estado">Pais:</label>
-                    <select id="end-estado" required>
+                    <label for="end-pais">Pais:</label>
+                    <select id="end-pais" required>
                         <option value="">Selecione</option>
                         <option value="BR">Brasil</option><option value="IN">Inglaterra</option><option value="I">Índia</option>
                         <option value="EUA">Estados Unidos</option><option value="A">Alemanha</option><option value="NZ">Nova Zelândia</option>
@@ -93,43 +91,44 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group" style="flex: 1;">
-                <label for="end-estado">Situação do ensino médio:</label>
-                <select id="end-estado" required>
-                    <option value="">Selecione</option>
-                   <option value="">Estou cursando</option>
-                   <option value="">Já conclui</option>
-                </select>
-                </div>
 
-                <div class="form-group" style="flex: 1;">
-                    <label for="end-estado">Tipo de escola:</label>
-                    <select id="end-estado" required>
-                        <option value="">Selecione</option>
-                       <option value="">Escola Pública</option>
-                       <option value="">Escola Privada</option>
-    </select>
-             </div>          
+            <div class="form-group" style="flex: 1;">
+                <label for="situacao-ensino">Situação do ensino médio:</label>
+                <select id="situacao-ensino" required>
+                    <option value="">Selecione</option>
+                    <option value="cursando">Estou cursando</option>
+                    <option value="concluido">Já conclui</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="flex: 1;">
+                <label for="tipo-escola">Tipo de escola:</label>
+                <select id="tipo-escola" required>
+                    <option value="">Selecione</option>
+                    <option value="publica">Escola Pública</option>
+                    <option value="privada">Escola Privada</option>
+                </select>
+            </div>          
+
             <div class="form-group">
                 <label for="cadastro-senha">Senha:</label>
-                <input type="password" id="cadastro" minlength="8"  pattern="^(?=.*[A-Z]).{8,}$" placeholder="com 8 caracteres e 1 Maiuscula" required>
+                <input type="password" id="cadastro-senha" minlength="8" pattern="^(?=.*[A-Z]).{8,}$" placeholder="com 8 caracteres e 1 Maiuscula" required>
             </div>
 
             <div class="form-group">
                 <label for="cadastro-Csenha">Confirmar senha:</label>
-                <input type="password" id="cadastro-Csenha" minlength="8"  pattern="^(?=.*[A-Z]).{8,}$" placeholder="8 caracteres e 1 letra Maiuscula" required>
+                <input type="password" id="cadastro-Csenha" minlength="8" pattern="^(?=.*[A-Z]).{8,}$" placeholder="8 caracteres e 1 letra Maiuscula" required>
             </div>
 
             <button type="submit" class="btn-submit">Salvar inscrição</button>
+            <button type="button" class="btn" onclick="window.location.href='index.html'">Voltar</button>
+        </form>
+    </div>
 
-            <button type="button" class="btn">Voltar</button>
-            </div>
-            </form>
-            </div>
-
-        <footer class="rodape">
-            <p>costa©livia 2026-ENEM</p>
-        </footer>
+    <footer class="rodape">
+        <p>costa©livia 2026-ENEM</p>
+    </footer>
     
+    <script src="script.js"></script>
 </body>
 </html>

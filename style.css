@@ -9,88 +9,105 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    font-size: 20px;
-    font-family: 'inter', sans-serif;
-    background: #cad9ef;
-    color:  #004b87;
-    
-    /* Removemos o padding vertical daqui para o rodapé poder encostar no fundo */
-    padding: 0 20px; 
-    
-    display: flex;
-    flex-direction: column;
-    
-    /* Mudamos para stretch para os elementos (como o rodapé) poderem esticar até as bordas */
-    align-items: stretch; 
-    
-    min-height: 100%; /* Mudado de height para min-height (evita bugs se o conteúdo crescer demais) */
+html, body {
+    height: 100%;
 }
 
-/* ================= CABEÇALHO (NOVO) ================= */
+body {
+    font-size: 16px; 
+    font-family: 'Inter', sans-serif;
+    background: #cad9ef;
+    color: #004b87;
+    
+    /* Flexbox para garantir o rodapé sempre na base da tela */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* ================= CABEÇALHO (TOPO) ================= */
 .topo {
     width: 100%;
-    background:  #004b87;
+    background: #004b87;
     color: rgb(150, 196, 211);
     text-align: center;
-    
-    /* Força o rodapé a ignorar o padding lateral do body e colar nas bordas da tela */
-    margin-left: -20px;
-    margin-right: -20px;
-    width: calc(100% + 40px);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .topo h2 {
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
+    margin-bottom: 5px;
 }
 
-
-/* Subtítulo */
+/*subtitulo*/
 .subtitulo {
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 0.9;
+    color: #ffffff;
 }
 
-/* Menu simples para navegar entre os arquivos locais */
+
 .nav-menu {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
+    margin: 20px auto;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
+    padding: 0 10px;
 }
 
+.nav-menu a {
+    text-decoration: none;
+    color: #004b87;
+    font-weight: 600;
+    transition: 0.2s;
+}
 
- 
 .nav-menu a:hover {
-    color:#609e7c;
-    transform: scale(1.1);
+    color: #71609e;
+    transform: scale(1.05);
 }
 
 
 .nav-menu a.active {
     background-color: #01511dfb;
     color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
-
-
+/* ================= CONTAINERS / CARDS PRINCIPAIS ================= */
 .container {
     background-color: white;
-    padding: 40px;       /* Um pouco menos de padding para dar mais espaço interno */
-    border-radius: 20px;
-    box-shadow: 0 4px 12px  #03035b(25, 3, 169, 0.2); /* Suavizei um pouco a sombra */
+    padding: 30px;
+    border-radius: 12px;
+    /* Correção do bug de sintaxe da sombra */
+    box-shadow: 0 4px 15px rgba(0, 32, 96, 0.15); 
     width: 100%;
     
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px; /* Espaço antes do rodapé final */
+    /* Centralização horizontal com margem flexível */
+    margin: 40px auto; 
     
-    flex: 1; /* Faz o container empurrar o rodapé para o fim da tela */
+    /* Faz o container ocupar o espaço disponível e empurrar o rodapé */
+    flex: 1; 
 }
 
+/* ================= FORMULÁRIOS ================= */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Garante que quebre linha em telas de celular */
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 140px; /* Evita que os campos fiquem esmagados */
 }
 
 label {
@@ -98,18 +115,184 @@ label {
     margin-bottom: 6px;
     font-weight: 600;
     font-size: 14px;
+    color: #333;
 }
 
-/* ================= RODAPÉ ================= */
+/* Estilização padrão para Inputs e Selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #004b87;
+    box-shadow: 0 0 0 2px rgba(0, 75, 135, 0.2);
+}
+
+/* Botões de Formulário */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #004b87;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #002d52;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #5a6268;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e9ecef;
+    margin: 20px 0;
+}
+
+/* Linha de rodapé dentro do login */
+.login-footer {
+    text-align: center;
+    font-size: 14px;
+}
+.login-footer a {
+    color: #004b87;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= TELA INICIAL (HOME) ================= */
+.container-home {
+    text-align: center;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 46, 137, 0.15);
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.boas-vindas-home h1 {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.ano-destaque {
+    color: #004b87;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.avisos-home {
+    text-align: left;
+    background-color: #cdd3ff;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #8bbae6;
+    margin: 25px 0;
+}
+
+.avisos-home h3 {
+    margin-top: 0;
+    color: #041185;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.avisos-home ul {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #032466;
+    line-height: 1.5;
+}
+
+/* Área de botões na Home */
+.botoes-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-home {
+    display: block;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+}
+
+.btn-entrar {
+    background-color: #0147b0;
+    color: white;
+}
+
+.btn-entrar:hover {
+    background-color: #2581c2;
+}
+
+.btn-cadastrar {
+    background-color: #7228a7;
+    color: white;
+}
+
+.btn-cadastrar:hover {
+    background-color:  #7228a7;
+}
+
+.btn-home:active {
+    transform: scale(0.98);
+}
+
+
+/* ================= RODAPÉ DO SITE ================= */
 .rodape {
+    width: 100%;
     text-align: center;
     padding: 15px;
     background-color: #004b87;
     color: rgb(150, 196, 211);
-    
-    /* Força o rodapé a ignorar o padding lateral do body e colar nas bordas da tela */
-    margin-left: -20px;
-    margin-right: -20px;
-    width: calc(100% + 40px);
-}
 
+    font-size: 14px;
+    margin-top: auto; /* Garante que se o conteúdo for pequeno, ele permaneça embaixo */
+}
