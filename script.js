@@ -48,21 +48,50 @@ if (formCadastro) {
 }
 
 const cursos = [
-    ["Direito", "Ciências Humanas"],
-    ["História","Ciências Humanas"],
-    ["Medicina", "Ciências da Natureza"],
-    ["Agronomia", "Ciências da Natureza"],
-    ["Letras", "Linguagens"],
-    ["Jornalismo", "Linguagens"],
-    ["Artes Visuais", "Linguagens"],
-    ["Engenharia Civil", "Ciências Exatas"],
-    ["Ciência da Computação", "Ciências Exatas"],
-    ["Biomedicina", "Ciências da Natureza"],
-    ["Administração", "Ciências Humanas"],
-    ["Estatística", "Ciências Exatas"]
-
+    { nome: "Direito", area: "Ciências Humanas" },
+    { nome: "História", area: "Ciências Humanas" },
+    { nome: "Medicina", area: "Ciências da Natureza" },
+    { nome: "Agronomia", area: "Ciências da Natureza" },
+    { nome: "Letras", area: "Linguagens" },
+    { nome: "Jornalismo", area: "Linguagens" },
+    { nome: "Artes Visuais", area: "Linguagens" },
+    { nome: "Engenharia Civil", area: "Ciências Exatas" },
+    { nome: "Ciência da Computação", area: "Ciências Exatas" },
+    { nome: "Biomedicina", area: "Ciências da Natureza" },
+    { nome: "Administração", area: "Ciências Humanas" },
+    { nome: "Estatística", area: "Ciências Exatas" }
 ];
+const corpoTabela = document.getElementById("corpo-tabela");
 
+// 3. Função para renderizar as linhas na tabela
+function preencherTabela() {
+    // Limpa a tabela antes de preencher (evita duplicados)
+    corpoTabela.innerHTML = "";
+
+    // Percorre cada curso da lista
+    cursos.forEach(curso => {
+        // Cria uma nova linha (tr)
+        const linha = document.createElement("tr");
+
+        // Cria a célula do curso (td)
+        const celulaCurso = document.createElement("td");
+        celulaCurso.textContent = curso.nome;
+
+        // Cria a célula da área (td)
+        const celulaArea = document.createElement("td");
+        celulaArea.textContent = curso.area;
+
+        // Adiciona as células dentro da linha
+        linha.appendChild(celulaCurso);
+        linha.appendChild(celulaArea);
+
+        // Adiciona a linha completa dentro do corpo da tabela
+        corpoTabela.appendChild(linha);
+    });
+}
+
+// 4. Executa a função assim que a página carregar
+preencherTabela();
 
 // Procura por qualquer botão com a classe "btn" que tenha o texto "Voltar"
 const botoesVoltar = document.querySelectorAll('.btn');
